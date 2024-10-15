@@ -2,7 +2,7 @@
  
 <h1 style="text-align: center;">
 <a href="https://git.io/typing-svg" target="_blank">
-<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=35&duration=3000&pause=500&multiline=true&width=650&height=140&lines=%24+whoami;Bharatesh+Kharvi" alt="Title GitHub Readme" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=800&size=35&duration=3000&pause=500&multiline=true&width=650&height=140&lines=%24+whoami;Shravankumar+Janawade" alt="Title GitHub Readme" />
 </a>
 </h1>
  
@@ -42,9 +42,9 @@
  
 ## Connect with me:
 <div align="center">
-<a href="https://www.linkedin.com/in/shravankumar-janawade-45bbb0200?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="https://img.shields.io/badge/-Shravan Janwade%20K-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/shravankumar-janawade-45bbb0200?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="https://img.shields.io/badge/-Shravan Janwade%20-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
 <a target="_blank" href="mailto:shravanjanwade2252@gmail.com"><img src="https://img.shields.io/badge/-shravanjanwade2252@gmail.com-D14836?style=flat&logo=Gmail&logoColor=white"/></a>
-<a href="https://leetcode.com/u/shravanJanwade/" target="_blank"><img src="https://img.shields.io/badge/-Shravan Janwade%20K-FFA116?style=flat&logo=LeetCode&logoColor=white"/></a>
+<a href="https://leetcode.com/u/shravanJanwade/" target="_blank"><img src="https://img.shields.io/badge/-Shravan Janwade%20-FFA116?style=flat&logo=LeetCode&logoColor=white"/></a>
  
 </div>
  
