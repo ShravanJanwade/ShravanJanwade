@@ -93,8 +93,8 @@ A real-time project management app with Kanban boards synced over WebSockets.<br
 ## GitHub activity
 
 <p align="center">
-  <a href="https://github.com/ShravanJanwade?tab=repositories"><img height="170" src="https://github-readme-stats.vercel.app/api?username=ShravanJanwade&show_icons=true&hide_rank=true&hide=stars&bg_color=050507&title_color=A78BFA&text_color=D4D4D8&icon_color=22D3EE&border_color=27272A&border_radius=10" alt="GitHub stats for ShravanJanwade: commits, pull requests, issues, and repositories contributed to" /></a>
-  <a href="https://github.com/ShravanJanwade?tab=repositories"><img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShravanJanwade&layout=compact&bg_color=050507&title_color=A78BFA&text_color=D4D4D8&border_color=27272A&border_radius=10" alt="Most used languages in ShravanJanwade's public repositories" /></a>
+  <a href="https://github.com/ShravanJanwade?tab=repositories"><img height="170" src="./profile/stats.svg" alt="GitHub stats for ShravanJanwade: commits, pull requests, issues, and repositories contributed to" /></a>
+  <a href="https://github.com/ShravanJanwade?tab=repositories"><img height="170" src="./profile/top-langs.svg" alt="Most used languages in ShravanJanwade's public repositories" /></a>
 </p>
 
 <p align="center">
