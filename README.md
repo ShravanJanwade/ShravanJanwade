@@ -93,6 +93,10 @@ A real-time project management app with Kanban boards synced over WebSockets.<br
 ## GitHub activity
 
 <p align="center">
+  <a href="https://github.com/ShravanJanwade"><img width="100%" src="./profile/contrib-3d.svg" alt="3D calendar of ShravanJanwade's GitHub contributions over the past year, with charts of contribution types and languages" /></a>
+</p>
+
+<p align="center">
   <a href="https://github.com/ShravanJanwade?tab=repositories"><img height="170" src="./profile/stats.svg" alt="GitHub stats for ShravanJanwade: commits, pull requests, issues, and repositories contributed to" /></a>
   <a href="https://github.com/ShravanJanwade?tab=repositories"><img height="170" src="./profile/top-langs.svg" alt="Most used languages in ShravanJanwade's public repositories" /></a>
 </p>
@@ -102,15 +106,11 @@ A real-time project management app with Kanban boards synced over WebSockets.<br
 </p>
 
 <p align="center">
-  <a href="https://github.com/ShravanJanwade"><img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=ShravanJanwade&bg_color=050507&color=D4D4D8&title_color=A78BFA&line=8B5CF6&point=22D3EE&area=true&area_color=6366F1&hide_border=false&border_color=27272A&radius=10" alt="Graph of ShravanJanwade's daily GitHub contributions over the last month" /></a>
-</p>
-
-<p align="center">
   <a href="https://github.com/ShravanJanwade">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ShravanJanwade/ShravanJanwade/output/github-snake-dark.svg" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ShravanJanwade/ShravanJanwade/output/github-snake.svg" />
-      <img src="https://raw.githubusercontent.com/ShravanJanwade/ShravanJanwade/output/github-snake.svg" alt="Animation of a snake eating ShravanJanwade's GitHub contribution graph" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ShravanJanwade/ShravanJanwade/main/profile/snake-dark.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ShravanJanwade/ShravanJanwade/main/profile/snake.svg" />
+      <img src="https://raw.githubusercontent.com/ShravanJanwade/ShravanJanwade/main/profile/snake.svg" alt="Animation of a snake eating ShravanJanwade's GitHub contribution graph" />
     </picture>
   </a>
 </p>

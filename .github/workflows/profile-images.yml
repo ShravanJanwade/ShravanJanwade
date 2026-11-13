@@ -1,0 +1,103 @@
+name: Update profile images
+
+on:
+  # Daily at 00:00 UTC
+  schedule:
+    - cron: "0 0 * * *"
+  # Run it by hand from the Actions tab
+  workflow_dispatch:
+  # Run right away when this workflow or the 3D settings change
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/profile-images.yml
+      - .github/profile-3d.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-images
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v7
+
+      # Every generator has continue-on-error, so one bad API call doesn't
+      # stop the others. A failed image keeps its last good copy.
+
+      - name: Stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        continue-on-error: true
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&hide_rank=true&hide=stars&bg_color=050507&title_color=A78BFA&text_color=D4D4D8&icon_color=22D3EE&border_color=27272A&border_radius=10
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Top languages card
+        uses: stats-organization/github-readme-stats-action@v2
+        continue-on-error: true
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&bg_color=050507&title_color=A78BFA&text_color=D4D4D8&border_color=27272A&border_radius=10
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: 3D contribution calendar
+        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          SETTING_JSON: .github/profile-3d.json
+
+      # The 3D image always draws star and fork counts; remove them so the
+      # profile shows contributions only, then move it next to the others.
+      - name: Tidy 3D image
+        continue-on-error: true
+        run: |
+          f=profile-3d-contrib/profile-3d.svg
+          if [ ! -f "$f" ]; then echo "::warning::3D image was not generated"; exit 0; fi
+          python3 - "$f" <<'PY'
+          import re, sys
+          path = sys.argv[1]
+          svg = open(path, encoding="utf-8").read()
+          for name, icon in (("star", r"M8 \.25a"), ("fork", r"M5 3\.25a")):
+              pattern = (r'<g[^>]*>\s*<path[^>]*\bd="' + icon + r'[^"]*"[^>]*>\s*(?:</path>)?\s*</g>'
+                         r'\s*<text[^>]*>[^<]*<title>[^<]*</title>\s*</text>')
+              svg, n = re.subn(pattern, "", svg)
+              print(f"{name}: removed {n}")
+              if n != 1:
+                  print(f"::warning::expected to remove 1 {name} count, removed {n}")
+          open(path, "w", encoding="utf-8").write(svg)
+          PY
+          mkdir -p profile
+          mv "$f" profile/contrib-3d.svg
+          rm -rf profile-3d-contrib
+
+      - name: Contribution snake
+        uses: Platane/snk/svg-only@v3
+        continue-on-error: true
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            profile/snake.svg?palette=github-light&color_snake=#6d28d9&color_dots=#ebedf0,#ddd6fe,#a78bfa,#7c3aed,#4c1d95
+            profile/snake-dark.svg?palette=github-dark&color_snake=#22d3ee&color_dots=#161b22,#2e1065,#5b21b6,#8b5cf6,#c4b5fd
+
+      - name: Commit changed images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/
+          if git diff --cached --quiet; then echo "No image changes"; exit 0; fi
+          git commit -m "Update profile images"
+          git pull --rebase origin main
+          git push origin HEAD:main
